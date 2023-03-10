@@ -1,8 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Dashboard, { dashboardLoader } from "./pages/Dashboard";
 import Main, { mainLoader } from "./layouts/Main";
 import Error from "./pages/Error";
 import { logoutAction } from "./actions/logout";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,7 @@ const App = () => {
   return (
     <div className='App'>
       <RouterProvider router={router} />
+      <ToastContainer />
     </div>
   );
 };
