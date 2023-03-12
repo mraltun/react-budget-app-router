@@ -30,9 +30,9 @@ const AddExpenseForm = ({ budgets }) => {
             <label htmlFor='newExpense'>Expense Name</label>
             <input
               type='text'
-              name='nexExpense'
-              id='nexExpense'
-              placeholder='e.g Coffee'
+              name='newExpense'
+              id='newExpense'
+              placeholder='e.g. Coffee'
               ref={focusRef}
               required
             />
@@ -43,16 +43,16 @@ const AddExpenseForm = ({ budgets }) => {
               type='number'
               step='0.01'
               inputMode='decimal'
-              name='nexExpenseAmount'
-              id='nexExpenseAmount'
-              placeholder='e.g 3.50'
+              name='newExpenseAmount'
+              id='newExpenseAmount'
+              placeholder='e.g. 3.50'
               required
             />
           </div>
         </div>
         <div className='grid-xs' hidden={budgets.length === 1}>
-          <label htmlFor='nexExpenseBudget'>Budget Category</label>
-          <select name='nexExpenseBudget' id='nexExpenseBudget' required>
+          <label htmlFor='newExpenseBudget'>Budget Category</label>
+          <select name='newExpenseBudget' id='newExpenseBudget' required>
             {budgets
               .sort((a, b) => a.createdAt - b.createdAt)
               .map((budget) => {
@@ -67,7 +67,7 @@ const AddExpenseForm = ({ budgets }) => {
         <input type='hidden' name='_action' value='createExpense' />
         <button type='submit' className='btn btn--dark' disabled={isSubmitting}>
           {isSubmitting ? (
-            <span>Submitting...</span>
+            <span>Submitting…</span>
           ) : (
             <>
               <span>Add Expense</span>
