@@ -1,15 +1,21 @@
-import React from "react";
+import ExpenseItem from "./ExpenseItem";
 
 export const Table = ({ expenses }) => {
   return (
     <div className='table'>
       <table>
         <thead>
-          <tr></tr>
+          <tr>
+            {["Name", "Amount", "Date"].map((item, index) => (
+              <th key={index}>{item}</th>
+            ))}
+          </tr>
         </thead>
         <tbody>
           {expenses.map((expense) => (
-            <tr key={expense.id}>{expense.name}</tr>
+            <tr key={expense.id}>
+              <ExpenseItem expense={expense} />
+            </tr>
           ))}
         </tbody>
       </table>
