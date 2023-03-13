@@ -67,7 +67,7 @@ const BudgetPage = () => {
         Overview
       </h1>
       <div className='flex-lg'>
-        <BudgetItem budget={budget} />
+        <BudgetItem budget={budget} showDelete={true} />
         <AddExpenseForm budgets={[budget]} />
       </div>
       {expenses && expenses.length > 0 && (
